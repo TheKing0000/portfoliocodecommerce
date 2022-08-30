@@ -96,6 +96,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+        <div onClick={handleNav} className={nav ? "fixed right-0 top-0 h-screen w-[25%] sm:w-[40%] " : ""}></div>
       </div>
     </div>
   )
