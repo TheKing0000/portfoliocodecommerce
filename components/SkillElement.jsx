@@ -3,7 +3,7 @@ import Image from 'next/image'
 function SkillElement({ urlAndName }) {
   return (
     <div>
-      <div className='p-6 shadow-xl rounded-xl hover:scale-110 ease-in duration-300'>
+      <div className='p-6 shadow-xl rounded-xl md:hover:scale-110 ease-in duration-300'>
         <div className='grid grid-cols-2 gap-4 '>
           <div className='flex items-center justify-center'>
             <Image alt='/' width="64px" height="64px" src={`/assets/skills/${urlAndName}.png`} />

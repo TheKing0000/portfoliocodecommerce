@@ -22,16 +22,16 @@ const Contact = () => {
               <div>
                 <Image className='rounded-xl' src={contactImg} alt="/" />
               </div>
-              <div>
+              <div >
                 <h2 className='py-2'>Name here</h2>
                 <p>Front End Developer</p>
                 <p>I am available for freelance or full time positions. Contact me and let&apos;s talk</p>
               </div>
-              <div>
+              <div className='pt-10'>
                 <p className='uppercase pt-8'>Connect With Me</p>
-                <div className='flex items-center justify-between py-4'>
+                <div className='flex items-center justify-between p-8'>
 
-                  <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'><FaLinkedinIn />
+                  <div className='rounded-full shadow-lg shadow-gray-400 p-6  cursor-pointer hover:scale-110 ease-in duration-300'><FaLinkedinIn />
                   </div>
                   <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'><FaGithub />
                   </div>
@@ -84,7 +84,7 @@ const Contact = () => {
         </div>
         <div className='flex justify-center items-center py-12'>
           <Link href="/">
-            <div className='rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300'>
+            <div className='rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer  animate-bounce'>
               <HiOutlineChevronDoubleUp className='text-[#5651e5]' size={30} />
             </div>
           </Link>
