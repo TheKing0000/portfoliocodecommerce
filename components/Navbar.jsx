@@ -11,8 +11,9 @@ const Navbar = () => {
     setNav(!nav)
   }
 
+
   return (
-    <div className='fixed w-full h-16 shadow-2xl z-[100]'>
+    <div className='fixed bg-slate-200 w-full h-16 shadow-2xl z-[100]'>
       <div className='flex justify-between items-center w-full h-full  px-2 2xl:px-16 '>
 
         <Image width="125" height="50" src="/assets/navLogo.png" alt="nav logo" />
