@@ -1,39 +1,64 @@
 import React, { useState, useEffect } from 'react'
+import { useRouter } from "next/router"
 import Image from 'next/image'
 import Link from "next/link"
 import { AiOutlineMenu, AiOutlineClose, AiOutlineMail } from "react-icons/ai"
 import { FaLinkedinIn, FaGithub } from "react-icons/fa"
 import { BsFillPersonLinesFill } from "react-icons/bs"
+import { DiSublime } from "react-icons/di";
 const Navbar = () => {
 
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
+  const [navBg, setNavBg] = useState("#ecf0f3");
+  const [linkColor, setLinkColor] = useState("#1f2937");
+
+  const router = useRouter()
   const handleNav = () => {
     setNav(!nav)
   }
   useEffect(() => {
+    if (router.asPath === "/property") {
+      setNavBg("transparent")
+      setLinkColor("#ecf0f3")
+    } else {
+      setNavBg("#ecf0f3")
+      setLinkColor("#1f2937")
+    }
+
+  }, [router]);
+  useEffect(() => {
     const handleShadow = () => {
       if (window.scrollY >= 90) {
         setShadow(true)
+        setNavBg("#ecf0f3")
+        setLinkColor("#1f2937")
       } else {
-        setShadow(false)
+        if (router.asPath === "/property") {
+          setShadow(false)
+          setNavBg("transparent")
+          setLinkColor("#ecf0f3")
+        } else {
+          setShadow(false)
+        }
+
       }
     }
     const shadowEventListener = window.addEventListener('scroll', handleShadow)
     return () => {
       window.removeEventListener('scroll', handleShadow)
     };
-  }, []);
+  }, [router]);
 
   return (
-    <div className={shadow ? 'fixed bg-slate-200 w-full h-16 shadow-2xl z-[100]' : 'fixed  w-full h-16  z-[100]'}>
+    <div data-aos="zoom-in" style={{ backgroundColor: `${navBg}` }} className={shadow ? 'fixed  w-full h-16 shadow-2xl z-[100]' : 'fixed  w-full h-16  z-[100]'}>
       <div className='flex justify-between items-center w-full h-full  px-2 2xl:px-16 '>
         <Link href="/">
-          <Image width="125" height="50" src="/assets/navLogo.png" alt="nav logo" />
+          <DiSublime className='cursor-pointer' color="#5651e5" size={50} />
         </Link>
 
         <div >
-          <ul className='hidden md:mx-7 md:flex'>
+          <ul style={{ color: `${linkColor}` }} className='hidden md:mx-7 md:flex'>
             <Link href="/">
               <li className='ml-10 text-sm uppercase hover:scale-105 '>Home</li>
             </Link>
@@ -60,7 +85,7 @@ const Navbar = () => {
         <div
           className={nav ?
             'overflow-auto fixed left-0 top-0 w-[75%] sm:w-[60%]  h-screen bg-[#ecf0f3] p-10 ease-in duration-500'
-            : "fixed left-[-100%] top-0 p-10  ease-in duration-500 "}>
+            : "fixed left-[-100%] top-0 p-10 "}>
           <div>
             <div className='flex w-full  justify-between items-center'>
               <Image width="87" height="35" src="/assets/navLogo.png" alt="nav logo" />
