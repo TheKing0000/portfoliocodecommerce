@@ -1,67 +1,58 @@
-import React from 'react'
-import SkillElement from './SkillElement'
+import React from "react";
+import SkillElement from "./SkillElement";
 
 const skills = [
   {
-    name: "aws"
+    name: "aws",
   },
   {
-    name: "css"
+    name: "css",
   },
   {
-    name: "firebase"
+    name: "firebase",
   },
   {
-    name: "github1"
+    name: "github1",
   },
   {
-    name: "html"
+    name: "html",
   },
   {
-    name: "javascript"
+    name: "javascript",
   },
   {
-    name: "mongo"
+    name: "mongo",
   },
   {
-    name: "nextjs"
+    name: "nextjs",
   },
   {
-    name: "node"
+    name: "node",
   },
   {
-    name: "react"
+    name: "react",
   },
   {
-    name: "shopify"
+    name: "shopify",
   },
   {
-    name: "tailwind"
-  }
-]
+    name: "tailwind",
+  },
+];
 const Skills = () => {
   return (
-    <div id="skills" className='w-full lg:h-screen p-2'>
-      <div className='h-full max-w-[1240px] mx-auto flex flex-col justify-center'>
-        <p className='text-xl tracking-widest uppercase'> Skills</p>
-        <h2 className='py-8'>What I Can Do</h2>
-        <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-8'>
-
-
+    <div id="skills" className="w-full lg:h-screen p-2">
+      <div className="h-full max-w-[1240px] mx-auto flex flex-col justify-center">
+        <p className="text-xl tracking-widest uppercase"> Skills</p>
+        <h2 className="py-8">What I Can Do</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {skills.map((skill) => {
-            return (
-              <SkillElement urlAndName={skill.name} key={skill.name} />
-            )
+            return <SkillElement urlAndName={skill.name} key={skill.name} />;
           })}
-
-
-
-
-
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Skills
+export default Skills;
