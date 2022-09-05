@@ -51,7 +51,7 @@ const Navbar = () => {
   }, [router]);
 
   return (
-    <div data-aos="zoom-in" style={{ backgroundColor: `${navBg}` }} className={shadow ? 'fixed  w-full h-16 shadow-2xl z-[100]' : 'fixed  w-full h-16  z-[100]'}>
+    <div  style={{ backgroundColor: `${navBg}` }} className={shadow ? 'fixed  w-full h-16 shadow-2xl z-[100]' : 'fixed  w-full h-16  z-[100]'}>
       <div className='flex justify-between items-center w-full h-full  px-2 2xl:px-16 '>
         <Link href="/">
           <DiSublime className='cursor-pointer' color="#5651e5" size={50} />
