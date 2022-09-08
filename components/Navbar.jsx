@@ -16,11 +16,18 @@ const Navbar = () => {
   const [navBg, setNavBg] = useState("#ecf0f3");
   const [linkColor, setLinkColor] = useState("#1f2937");
   const [hamburgerColor, setHamburgerColor] = useState("black");
-
+  const [hideNavbarFix, SethideNavbarFix] = useState(false);
   const router = useRouter();
   const handleNav = () => {
     setNav(!nav);
   };
+  useEffect(() => {
+    if (router.asPath === "/property") {
+      SethideNavbarFix(true);
+    } else {
+      SethideNavbarFix(false);
+    }
+  }, [router]);
   useEffect(() => {
     if (router.asPath === "/property") {
       setNavBg("transparent");
@@ -58,7 +65,9 @@ const Navbar = () => {
     console.log(theme);
   };
   return (
-    <div className="w-full h-16 relative ">
+    <div
+      className={!hideNavbarFix ? "w-full h-16 relative " : "w-full relative"}
+    >
       <div
         style={{ backgroundColor: `${navBg}` }}
         className={
