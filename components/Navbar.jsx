@@ -7,8 +7,10 @@ import { AiOutlineMenu, AiOutlineClose, AiOutlineMail } from "react-icons/ai";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { DiSublime } from "react-icons/di";
+import { useTheme } from "next-themes";
 
 const Navbar = () => {
+  const { theme, setTheme } = useTheme();
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
   const [navBg, setNavBg] = useState("#ecf0f3");
@@ -51,18 +53,21 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleShadow);
     };
   }, [router]);
-
+  const toogleTheme = async () => {
+    await setTheme(theme === "light" ? "dark" : "light");
+    console.log(theme);
+  };
   return (
-    <div className="w-full h-16 relative">
+    <div className="w-full h-16 relative ">
       <div
         style={{ backgroundColor: `${navBg}` }}
         className={
           shadow
-            ? "fixed  w-full h-16 shadow-2xl z-[100]"
+            ? "fixed  w-full h-16 shadow-2xl z-[100] "
             : "fixed  w-full h-16  z-[100]"
         }
       >
-        <div className="flex justify-between items-center w-full h-full  px-2 2xl:px-16 ">
+        <div className="flex  justify-between items-center w-full h-full  px-2 2xl:px-16 ">
           <Link href="/">
             <DiSublime className="cursor-pointer" color="#5651e5" size={50} />
           </Link>
@@ -98,6 +103,7 @@ const Navbar = () => {
                 </li>
               </Link>
             </ul>
+
             <div onClick={handleNav} className="mr-5 md:hidden">
               <AiOutlineMenu color={hamburgerColor} size={25} />
             </div>
