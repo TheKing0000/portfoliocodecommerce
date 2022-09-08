@@ -19,7 +19,7 @@ export default function Document() {
           property="og:url"
           content="https://portfoliocodecommerce.vercel.app/"
         />
-        <meta property="og:image" content="/assets/next.png" />
+        <meta property="og:image" content="/assets/contact.jpg" />
       </Head>
       <body>
         <Main />
