@@ -18,7 +18,7 @@ export default function Document() {
           content="https://flaviocopes.com/img/avatar.png"
         />
       </Head>
-      <body className="dark:bg-black duration-1000">
+      <body>
         <Main />
         <NextScript />
       </body>
