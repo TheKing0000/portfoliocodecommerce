@@ -4,47 +4,44 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { AiOutlineMenu, AiOutlineClose, AiOutlineMail } from "react-icons/ai";
+import { MdNightlightRound } from "react-icons/md";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
-import { BsFillPersonLinesFill } from "react-icons/bs";
+import { BsFillPersonLinesFill, BsFillSunFill } from "react-icons/bs";
 import { DiSublime } from "react-icons/di";
 import { useTheme } from "next-themes";
+import Button from "./Button";
 
 const Navbar = () => {
-  const { theme, setTheme } = useTheme();
+  const { systemTheme, theme, setTheme } = useTheme();
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
-  const [navBg, setNavBg] = useState("#ecf0f3");
-  const [linkColor, setLinkColor] = useState("#1f2937");
-  const [hamburgerColor, setHamburgerColor] = useState("black");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const router = useRouter();
   const handleNav = () => {
     setNav(!nav);
   };
-  useEffect(() => {
+  {
+    /*
+    useEffect(() => {
     if (router.asPath === "/property") {
-      setNavBg("transparent");
-      setLinkColor("#ecf0f3");
-      setHamburgerColor("white");
+      SethideNavbarFix(true);
     } else {
-      setNavBg("#ecf0f3");
-      setLinkColor("#1f2937");
-      setHamburgerColor("black");
+      SethideNavbarFix(false);
     }
-  }, [router]);
+  }, [router]); 
+  */
+  }
+
   useEffect(() => {
     const handleShadow = () => {
       if (window.scrollY >= 90) {
         setShadow(true);
-        setNavBg("#ecf0f3");
-        setLinkColor("#1f2937");
-        setHamburgerColor("black");
       } else {
-        if (router.asPath === "/property") {
-          setNavBg("transparent");
-          setLinkColor("#ecf0f3");
-          setHamburgerColor("white");
-        }
         setShadow(false);
       }
     };
@@ -53,18 +50,39 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleShadow);
     };
   }, [router]);
-  const toogleTheme = async () => {
-    await setTheme(theme === "light" ? "dark" : "light");
-    console.log(theme);
+  {
+    /* Toogle dark and light mode */
+  }
+
+  const renderThemeChanger = () => {
+    if (!mounted) return null;
+
+    const currentTheme = theme === "system" ? systemTheme : theme;
+
+    if (currentTheme === "dark") {
+      return (
+        <Button className="rounded-lg p-1 " onClick={() => setTheme("light")}>
+          <BsFillSunFill size={24}></BsFillSunFill>
+        </Button>
+      );
+    } else {
+      return (
+        <Button
+          className="rounded-lg p-1 bg-[#ecf0f3]"
+          onClick={() => setTheme("dark")}
+        >
+          <MdNightlightRound size={24}></MdNightlightRound>
+        </Button>
+      );
+    }
   };
   return (
     <div className="w-full h-16 relative ">
       <div
-        style={{ backgroundColor: `${navBg}` }}
         className={
           shadow
-            ? "fixed  w-full h-16 shadow-2xl z-[100] "
-            : "fixed  w-full h-16  z-[100]"
+            ? `fixed  w-full h-16 shadow-lg shadow-black dark:shadow-[#5651e5] z-[100] bg-[#ecf0f3] dark:bg-[#0f0e17]`
+            : `fixed  w-full h-16  z-[100] bg-[#ecf0f3] dark:bg-[#0f0e17]`
         }
       >
         <div className="flex  justify-between items-center w-full h-full  px-2 2xl:px-16 ">
@@ -73,10 +91,7 @@ const Navbar = () => {
           </Link>
 
           <div>
-            <ul
-              style={{ color: `${linkColor}` }}
-              className="hidden md:mx-7 md:flex select-none"
-            >
+            <ul className="hidden text-black dark:text-white md:mx-7 md:flex select-none items-center">
               <Link href="/">
                 <li className="ml-10 text-sm uppercase hover:scale-105 ">
                   Home
@@ -102,10 +117,12 @@ const Navbar = () => {
                   Contact
                 </li>
               </Link>
+              <li className="ml-10 text-sm uppercase hover:scale-105">
+                {renderThemeChanger()}
+              </li>
             </ul>
-
             <div onClick={handleNav} className="mr-5 md:hidden">
-              <AiOutlineMenu color={hamburgerColor} size={25} />
+              <AiOutlineMenu className="text-black dark:text-white" size={25} />
             </div>
           </div>
         </div>
@@ -120,7 +137,7 @@ const Navbar = () => {
           <div
             className={
               nav
-                ? "overflow-auto fixed left-0 top-0 w-[75%] sm:w-[60%]  h-screen bg-[#ecf0f3] p-10 ease-in duration-500"
+                ? "overflow-auto fixed left-0 top-0 w-[75%] sm:w-[60%]  h-screen bg-[#ecf0f3] dark:bg-[#0f0e17] p-10 ease-in duration-500"
                 : "fixed left-[-100%] top-0 p-10 "
             }
           >
@@ -134,9 +151,9 @@ const Navbar = () => {
                 />
                 <div
                   onClick={handleNav}
-                  className="rounded-full shadow-xl shadow-gray-400 p-3 cursor-pointer"
+                  className="rounded-full dark:bg-[#5651e5] shadow-xl shadow-[#5651e5] p-3 cursor-pointer"
                 >
-                  <AiOutlineClose />
+                  <AiOutlineClose className="dark:text-black" />
                 </div>
               </div>
               <div className="border-b border-gray-300 my-4">
@@ -147,6 +164,7 @@ const Navbar = () => {
             </div>
             <div className="py-4 flex flex-col">
               <ul className="uppercase">
+                <li className="text-center">{renderThemeChanger()}</li>
                 <Link href="/">
                   <li onClick={handleNav} className="py-4 text-sm">
                     Home
@@ -173,23 +191,23 @@ const Navbar = () => {
                   </li>
                 </Link>
               </ul>
-              <div className="pt-20">
+              <div className="pt-16">
                 <p className="uppercase tracking-widest text-[#5651e5]">
                   Let&apos;s Connect!
                 </p>
 
-                <div className="flex items-center justify-between w-full my-4 sm:w-[80%]">
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                    <FaLinkedinIn />
+                <div className="flex items-center justify-between w-full my-4 sm:w-[80%] pt-4">
+                  <div className="rounded-full dark:bg-[#fffffe] shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-300">
+                    <FaLinkedinIn color="black" size={20} />
                   </div>
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                    <FaGithub />
+                  <div className="rounded-full dark:bg-[#fffffe] shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-300">
+                    <FaGithub color="black" size={20} />
                   </div>
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                    <AiOutlineMail />
+                  <div className="rounded-full dark:bg-[#fffffe] shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-300">
+                    <BsFillPersonLinesFill color="black" size={20} />
                   </div>
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                    <BsFillPersonLinesFill />
+                  <div className="rounded-full dark:bg-[#fffffe] shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-300">
+                    <AiOutlineMail color="black" size={20} />
                   </div>
                 </div>
               </div>
