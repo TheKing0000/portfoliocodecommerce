@@ -26,7 +26,7 @@ const property = () => {
           <div className="flex h-full flex-col  justify-center">
             <p className=" text-lg">Project</p>
             <h2 className="pb-6">Overview</h2>
-            <p>
+            <p className="text-lg">
               I&apos;m focused on building responsive front-end web applications
               while learning back-end technologies. I&apos;m focused on building
               responsive front-end web applications while learning back-end
@@ -34,8 +34,12 @@ const property = () => {
               web applications while learning back-end technologies.
             </p>
             <div className="pt-2">
-              <button className=" px-8 py-3 mt-4 mr-8">Code</button>
-              <button className="px-8 py-3 mt-4">Demo</button>
+              <button className=" px-8 py-3 mt-4 mr-8 bg-[#5651e5] text-white uppercase">
+                Code
+              </button>
+              <button className="px-8 py-3 mt-4 bg-[#5651e5] text-white uppercase">
+                Demo
+              </button>
             </div>
           </div>
         </div>
@@ -44,22 +48,22 @@ const property = () => {
             <p>Technologies</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-1">
-            <p className="text-gray-600 py-2 flex items-center">
+            <p className=" py-2 flex items-center">
               <RiRadioButtonFill className="pr-1" /> React
             </p>
-            <p className="text-gray-600 py-2 flex items-center">
+            <p className=" py-2 flex items-center">
               <RiRadioButtonFill className="pr-1" /> Tailwind
             </p>
-            <p className="text-gray-600 py-2 flex items-center">
+            <p className=" py-2 flex items-center">
               <RiRadioButtonFill className="pr-1" /> Javascript
             </p>
-            <p className="text-gray-600 py-2 flex items-center">
+            <p className=" py-2 flex items-center">
               <RiRadioButtonFill className="pr-1" /> Firebase
             </p>
-            <p className="text-gray-600 py-2 flex items-center">
+            <p className=" py-2 flex items-center">
               <RiRadioButtonFill className="pr-1" /> Google API
             </p>
-            <p className="text-gray-600 py-2 flex items-center">
+            <p className=" py-2 flex items-center">
               <RiRadioButtonFill className="pr-1" /> Zillow API
             </p>
           </div>
