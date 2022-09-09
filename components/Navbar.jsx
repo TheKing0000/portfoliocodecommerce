@@ -138,7 +138,7 @@ const Navbar = () => {
             className={
               nav
                 ? "overflow-auto fixed left-0 top-0 w-[75%] sm:w-[60%]  h-screen bg-[#ecf0f3] dark:bg-[#0f0e17] py-10 px-5 ease-in duration-500"
-                : "fixed left-[-100%] top-0 "
+                : "fixed left-[-100%] top-0 py-10 px-5"
             }
           >
             <div>

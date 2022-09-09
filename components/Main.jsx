@@ -27,16 +27,16 @@ const Main = () => {
             while learning back-end technologies.
           </p>
           <div className="flex items-center justify-between max-w-[330px] m-auto py-4">
-            <div className="rounded-full dark:bg-[#fffffe] shadow-lg shadow-gray-400 md:p-6 p-3 cursor-pointer hover:scale-110 ease-in duration-300">
+            <div className="rounded-full dark:bg-[#fffffe] shadow-lg shadow-gray-400 md:p-6 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
               <FaLinkedinIn color="black" size={20} />
             </div>
-            <div className="rounded-full dark:bg-[#fffffe] shadow-lg shadow-gray-400 md:p-6 p-3 cursor-pointer hover:scale-110 ease-in duration-300">
+            <div className="rounded-full dark:bg-[#fffffe] shadow-lg shadow-gray-400 md:p-6 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
               <FaGithub color="black" size={20} />
             </div>
-            <div className="rounded-full dark:bg-[#fffffe] shadow-lg shadow-gray-400 md:p-6 p-3 cursor-pointer hover:scale-110 ease-in duration-300">
+            <div className="rounded-full dark:bg-[#fffffe] shadow-lg shadow-gray-400 md:p-6 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
               <BsFillPersonLinesFill color="black" size={20} />
             </div>
-            <div className="rounded-full dark:bg-[#fffffe] shadow-lg shadow-gray-400 md:p-6 p-3 cursor-pointer hover:scale-110 ease-in duration-300">
+            <div className="rounded-full dark:bg-[#fffffe] shadow-lg shadow-gray-400 md:p-6 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
               <AiOutlineMail color="black" size={20} />
             </div>
           </div>
