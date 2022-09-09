@@ -137,8 +137,8 @@ const Navbar = () => {
           <div
             className={
               nav
-                ? "overflow-auto fixed left-0 top-0 w-[75%] sm:w-[60%]  h-screen bg-[#ecf0f3] dark:bg-[#0f0e17] p-10 ease-in duration-500"
-                : "fixed left-[-100%] top-0 p-10 "
+                ? "overflow-auto fixed left-0 top-0 w-[75%] sm:w-[60%]  h-screen bg-[#ecf0f3] dark:bg-[#0f0e17] py-10 px-5 ease-in duration-500"
+                : "fixed left-[-100%] top-0 "
             }
           >
             <div>
@@ -196,7 +196,7 @@ const Navbar = () => {
                   Let&apos;s Connect!
                 </p>
 
-                <div className="flex items-center justify-between w-full my-4 sm:w-[80%] pt-4">
+                <div className="flex items-center justify-between w-full my-4 sm:w-[80%] pt-4 pb-4">
                   <div className="rounded-full dark:bg-[#fffffe] shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-300">
                     <FaLinkedinIn color="black" size={20} />
                   </div>
@@ -206,7 +206,7 @@ const Navbar = () => {
                   <div className="rounded-full dark:bg-[#fffffe] shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-300">
                     <BsFillPersonLinesFill color="black" size={20} />
                   </div>
-                  <div className="rounded-full dark:bg-[#fffffe] shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-300">
+                  <div className="rounded-full dark:bg-[#fffffe] shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-300 ">
                     <AiOutlineMail color="black" size={20} />
                   </div>
                 </div>
