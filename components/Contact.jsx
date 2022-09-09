@@ -35,37 +35,20 @@ const Contact = () => {
                 </p>
               </div>
               <div>
-                <p className="uppercase pt-8">Connect With Me</p>
+                <p className="uppercase pt-8 pb-3">Connect With Me</p>
                 <div className="flex items-center justify-between py-4">
-                  <a
-                    href="https://www.linkedin.com/in/clint-briley-50056920a/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                      <FaLinkedinIn />
-                    </div>
-                  </a>
-                  <a
-                    href="https://github.com/fireclint"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                      <FaGithub />
-                    </div>
-                  </a>
-
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                    <AiOutlineMail />
+                  <div className="rounded-full dark:bg-[#fffffe] shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                    <FaLinkedinIn color="black" size={20} />
                   </div>
-                  <Link href="/resume">
-                    <a>
-                      <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                        <BsFillPersonLinesFill />
-                      </div>
-                    </a>
-                  </Link>
+                  <div className="rounded-full dark:bg-[#fffffe] shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                    <FaGithub color="black" size={20} />
+                  </div>
+                  <div className="rounded-full dark:bg-[#fffffe] shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                    <BsFillPersonLinesFill color="black" size={20} />
+                  </div>
+                  <div className="rounded-full dark:bg-[#fffffe] shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300 ">
+                    <AiOutlineMail color="black" size={20} />
+                  </div>
                 </div>
               </div>
             </div>
