@@ -81,7 +81,7 @@ const Navbar = () => {
       <div
         className={
           shadow
-            ? `fixed  w-full h-16 shadow-lg shadow-black dark:shadow-[#5651e5] z-[100] bg-[#ecf0f3] dark:bg-[#0f0e17]`
+            ? `fixed  w-full h-16 shadow-lg shadow-black dark:shadow-[#5651e5]  duration-1000 z-[100] bg-[#ecf0f3] dark:bg-[#0f0e17]`
             : `fixed  w-full h-16  z-[100] bg-[#ecf0f3] dark:bg-[#0f0e17]`
         }
       >
@@ -137,18 +137,19 @@ const Navbar = () => {
           <div
             className={
               nav
-                ? "overflow-auto fixed left-0 top-0 w-[75%] sm:w-[60%]  h-screen bg-[#ecf0f3] dark:bg-[#0f0e17] py-10 px-5 ease-in duration-500"
+                ? "overflow-auto fixed left-0 top-0 w-[85%] sm:w-[75%]  h-screen bg-[#ecf0f3] dark:bg-[#0f0e17] py-10 px-5 ease-in duration-500"
                 : "fixed left-[-100%] top-0 py-10 px-5"
             }
           >
             <div>
               <div className="flex w-full  justify-between items-center">
-                <Image
-                  width="87"
-                  height="35"
-                  src="/assets/navLogo.png"
-                  alt="nav logo"
-                />
+                <Link href="/">
+                  <DiSublime
+                    className="cursor-pointer"
+                    color="#5651e5"
+                    size={50}
+                  />
+                </Link>
                 <div
                   onClick={handleNav}
                   className="rounded-full dark:bg-[#5651e5] shadow-xl shadow-[#5651e5] p-3 cursor-pointer"
@@ -216,7 +217,7 @@ const Navbar = () => {
           <div
             onClick={handleNav}
             className={
-              nav ? "fixed right-0 top-0 h-screen w-[25%] sm:w-[40%] " : ""
+              nav ? "fixed right-0 top-0 h-screen w-[15%] sm:w-[25%] " : ""
             }
           ></div>
         </div>

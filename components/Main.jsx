@@ -7,7 +7,7 @@ const Main = () => {
     <div
       data-aos="fade-right"
       id="home"
-      className="w-full h-screen min-h-screen text-center"
+      className="w-full h-screen min-h-screen  text-center"
     >
       <div className="max-w-7xl w-full mx-auto  h-full  flex justify-center items-center">
         <div>
