@@ -22,6 +22,7 @@ export default function Document() {
         <meta property="og:image" content="/assets/contact.jpg" />
         {/* pwa */}
         <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/logo.png"></link>
       </Head>
       <body>
         <Main />
