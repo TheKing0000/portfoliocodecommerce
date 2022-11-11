@@ -20,6 +20,10 @@ export default function Document() {
           content="https://portfoliocodecommerce.vercel.app/"
         />
         <meta property="og:image" content="/assets/contact.jpg" />
+        {/* pwa */}
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/icon.png"></link>
+        <meta name="theme-color" content="#fff" />
       </Head>
       <body>
         <Main />
