@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Simon Front End Developer</title>
+        <title>Simon Fullstack Developer</title>
         <meta name="description" content="Simon web developer portfolio page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
